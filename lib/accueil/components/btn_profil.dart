@@ -10,55 +10,44 @@ class BtnProfil extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      //alignment: Alignment.center,
+      alignment: Alignment.center,
       height: 60,
-      width: 60,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(20),
+      ),
       child: ElevatedButton(
         onPressed: () => showDialog<String>(
           context: context,
           builder: (BuildContext context) => AlertDialog(
-            //size: const Size(200, 200),
-            backgroundColor: kBlueColor,
+            backgroundColor: themeSombre.colorScheme.primary,
             title: Text(
               'Votre profil',
               style: boutonTaille,
               textAlign: TextAlign.center,
             ),
             actions: <Widget>[
-              Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
-                    Image(image: AssetImage("assets/images/avatar.png")),
-                    SizedBox(height: 20),
-                    BtnPseudo(),
-                    SizedBox(height: 15),
-                    BtnPoints(),
-                  ],
-                ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: const [
+                  Image(
+                      image: AssetImage("assets/images/avatar.png"),
+                      height: 100,
+                      width: 100),
+                  SizedBox(height: 20),
+                  BtnPseudo(),
+                  SizedBox(height: 15),
+                  BtnPoints(),
+                ],
               ),
             ],
           ),
         ),
         style: ElevatedButton.styleFrom(
-          //padding: const EdgeInsets.all(2),
-          alignment: Alignment.center,
-          backgroundColor: kBlueColor, // Couleur du fond du bouton (bleu)
+          //alignment: Alignment.center,
+          backgroundColor: themeSombre
+              .colorScheme.primary, // Couleur du fond du bouton (bleu)
         ),
-        child: Container(
-          alignment: Alignment.center,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(20),
-            color: kBlueColor,
-          ),
-          child: IconButton(
-            icon: const Icon(Icons.account_circle),
-            alignment: Alignment.center,
-            iconSize: 50,
-            color: Colors.white,
-            onPressed: () {},
-          ),
-        ),
+        child: const Icon(Icons.account_circle, size: 50, color: Colors.white),
       ),
     );
   }
