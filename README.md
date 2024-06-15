@@ -68,6 +68,4 @@ Il est souvent nécessaire de fournir à Firebase une empreinte SHA-1 et SHA-256
 ```bash
 /android/app
 ```
-Et voilà! Vous avez généré et ajouté vos empreintes SHA à votre projet Firebase.
-
-## oe c'est greg
+Et voilà! Vous avez généré et ajouté vos empreintes SHA à votre projet Firebase
